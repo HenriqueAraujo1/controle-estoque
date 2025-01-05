@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir Produto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Excluir Produto</h1>
+    <form id="formExcluir">
+        <input type="number" id="id" placeholder="ID do Produto" required>
+        <button type="submit">Excluir Produto</button>
+    </form>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('formExcluir').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const id = document.getElementById('id').value;
+
+            await deletarProduto(id);
+            alert('Produto excluído com sucesso!');
+            window.location.href = 'listar.html';
+        });
+    </script>
+</body>
+</html>
